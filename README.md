@@ -1,6 +1,6 @@
 # AI Medical Billing Revenue Cycle Team
 
-A multi agent AI **Operations Platform** for healthcare Revenue Cycle Management (RCM) — 
+A multi agent AI **Operations Platform** for healthcare Revenue Cycle Management (RCM) 
 Every insurance claim becomes a
 stateful workflow coordinated by **LangGraph** across a team of specialist agents
 that genuinely collaborate: they challenge each other's output, send work back for
@@ -34,7 +34,7 @@ A real hospital billing department isn't one person who does everything. It's a
 team of specialists: a coder, a documentation reviewer, a compliance officer, a
 policy analyst, an appeals specialist, and a manager who coordinates all of them.
 Each person is deep in one area and hands off to the next when their part is
-done, but they also push back on each other — a coder tells validation "I need
+done, but they also push back on each other, a coder tells validation "I need
 another look at this," compliance tells the manager "this can't go out yet,"
 and the manager decides what happens next.
 
@@ -151,7 +151,7 @@ straight to a human.
 
 ## Agent Collaboration in Practice
 
-These are the three collaboration patterns the codebase actually implements -
+These are the three collaboration patterns the codebase actually implements, 
 not just conceptually, but as real conditional edges and interrupts in
 `graph/graph.py` and `graph/routing.py`:
 
@@ -175,7 +175,7 @@ compliance blocks it, manager escalates it" chain a real RCM team follows.
 
 **3. Documentation pause and resume.** If Clinical Documentation extracts
 nothing usable at all, the intake graph pauses via LangGraph's `interrupt()`
-- checkpointed, so the pause survives across Streamlit reruns - and the claim
+checkpointed, so the pause survives across Streamlit reruns, and the claim
 sits in `AWAITING_DOCUMENTATION` status. A human supplies additional notes
 (from the New Claim page right after submission, or from Claim Details at any
 later point), and the workflow resumes from exactly that point: Clinical
@@ -186,7 +186,7 @@ it pauses again rather than forcing an empty claim through the rest of the team.
 
 ## LangGraph Orchestration
 
-**Workflow 1 - Claim Intake** (checkpointed for pause/resume)
+**Workflow 1  Claim Intake** (checkpointed for pause/resume)
 
 ```
 Claim Received
@@ -205,15 +205,15 @@ Claim Received
         `-- compliance blocked -> Human Review
 ```
 
-**Workflow 2 - Insurance Denial**
+**Workflow 2  Insurance Denial**
 
 ```
 Insurance Denial
    -> Denial Analysis Agent
         |-- non-appealable -> Human Review
         `-- appealable
-             -> Insurance Policy Agent (RAG re-check)
-             -> Compliance Agent (quality gate - is there a sound basis to appeal?)
+             -> Insurance Policy Agent (RAG recheck)
+             -> Compliance Agent (quality gate, is there a sound basis to appeal?)
                   |-- blocked -> Human Review
                   `-- cleared
                        -> Appeal Generation Agent
@@ -224,9 +224,9 @@ Both graphs are implemented with `langgraph.graph.StateGraph` over a shared,
 typed state (`graph/state.py`), with conditional routing, loops, and an
 interrupt (`graph/routing.py`, `graph/graph.py`) replacing what used to be a
 straight ine pipeline. The claim-intake graph is compiled with a
-checkpointer (`MemorySaver`, keyed per-claim by `thread_id`) specifically so
+checkpointer (`MemorySaver`, keyed per claim by `thread_id`) specifically so
 the documentation pause interrupt can be resumed later via
-`Command(resume=...)` - including from a completely different Streamlit
+`Command(resume=...)`  including from a completely different Streamlit
 rerun than the one that triggered the pause.
 
 ## Event-Driven Workflow
@@ -258,7 +258,7 @@ agent depends on its findings rather than querying RAG themselves.
 ```
 sample_data/payer_policies/*.txt
         |  (8 realistic policy documents: UHC, Aetna, Cigna, BCBS x
-        |   prior-authorization + coverage-criteria)
+        |   prior authorization + coverage criteria)
         v
   rag/loader.py       - loads documents, tags payer metadata
         v
@@ -267,7 +267,7 @@ sample_data/payer_policies/*.txt
   rag/embeddings.py   - OpenAIEmbeddings (live) or a deterministic hashing
         |                embedding (mock mode, fully offline)
         v
-  rag/vector_store.py - brute-force cosine-similarity NumPy index, persisted
+  rag/vector_store.py - brute-force cosine similarity NumPy index, persisted
         |                to rag/vector_store_index/ (no compiled deps)
         v
   rag/retriever.py     - similarity search + payer-filtered ranking
@@ -283,7 +283,7 @@ rather than silently resolved.
 > wheel availability is inconsistent across Python versions, OS/architecture
 > combinations, and NumPy ABI versions - exactly the kind of "works on my
 > machine" friction a portfolio project should avoid. For a corpus this size
-> (a handful of payer policy documents, a few hundred chunks), brute-force
+> (a handful of payer policy documents, a few hundred chunks), brute force
 > cosine similarity over a NumPy matrix is effectively instant and needs
 > nothing beyond NumPy, which the rest of the stack already depends on. The
 > vector store interface (`build_vector_store` / `load_vector_store` /
