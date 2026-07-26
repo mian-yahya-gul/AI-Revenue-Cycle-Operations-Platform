@@ -1,12 +1,12 @@
 # AI Medical Billing Revenue Cycle Team
 
-A multi agent AI **Operations Platform** for healthcare Revenue Cycle Management (RCM) 
+A multi agent AI **Operations Platform** for healthcare Revenue Cycle Management (RCM). 
 Every insurance claim becomes a
 stateful workflow coordinated by **LangGraph** across a team of specialist agents
 that genuinely collaborate: they challenge each other's output, send work back for
 revision, gate submission behind a compliance review, and pause for a human when
 documentation runs out, all through shared state and conditional routing, with
-**RAG-grounded** payer policy lookups, deterministic **tool calling**, **structured
+**RAG grounded** payer policy lookups, deterministic **tool calling**, **structured
 outputs**, and an **event driven** data layer underneath.
 
 ---
