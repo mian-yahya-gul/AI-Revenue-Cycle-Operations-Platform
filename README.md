@@ -86,10 +86,10 @@ simply executing one after another:
 4. Insurance Policy checks payer policy, grounded in retrieved policy text via
    RAG, not model memory, for coverage, prior authorization requirements, and
    any conflicting rules across retrieved documents.
-5. **Compliance** reviews everything the first four agents produced as a
+5. **Compliance** : reviews everything the first four agents produced as a
    whole, builds an audit trail, and issues the single authoritative
    human review determination, the quality gate every claim must clear.
-6. The **Revenue Cycle Manager** — the orchestrator, treats that
+6. The **Revenue Cycle Manager** : the orchestrator, treats that
    determination as final and routes the claim to **"ready for submission"**
    or **"needs human review,"** with a concrete next step directive either way.
 
