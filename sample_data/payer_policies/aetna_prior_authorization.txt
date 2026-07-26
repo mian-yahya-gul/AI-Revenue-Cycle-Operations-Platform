@@ -1,0 +1,42 @@
+Aetna Commercial and Medicare Advantage — Precertification Policy
+Policy Number: AET-PC-2024-03
+Effective Date: February 1, 2024
+
+PRECERTIFICATION REQUIREMENTS
+Aetna requires precertification (prior authorization) for the following
+services across all commercial and Medicare Advantage plans:
+1. All non-emergent inpatient admissions.
+2. Advanced imaging procedures including MRI, CT, and nuclear cardiology
+   studies performed in an outpatient setting.
+3. Elective surgical procedures with a global surgery period of 90 days
+   or more.
+4. Home health services beyond the first 60 days following an inpatient
+   discharge.
+5. Genetic and molecular diagnostic testing panels.
+
+REQUIRED SUPPORTING DOCUMENTATION
+Requests must include a completed precertification request form, the
+ordering physician's clinical notes, relevant lab or imaging results,
+and the specific ICD-10 and CPT codes for the requested service. Aetna
+will not process a precertification request that lacks a signed
+physician order.
+
+CLAIMS SUBMITTED WITHOUT PRECERTIFICATION
+Claims for services requiring precertification that are submitted
+without an approved precertification number will be denied under
+reason code CO-197. Providers have 60 calendar days from the date of
+denial to submit a retrospective review request with clinical
+justification for why precertification was not obtained in advance.
+
+MODIFIER REQUIREMENTS
+Claims billed with modifier -25 (significant, separately identifiable
+E/M service) or modifier -59 (distinct procedural service) must include
+supporting documentation in the medical record clearly justifying the
+use of the modifier. Claims with these modifiers lacking supporting
+documentation are subject to automatic review and possible denial.
+
+APPEALS PROCESS
+Members and providers may appeal a precertification-related denial
+within 180 days. Appeals should be submitted in writing and include all
+clinical documentation that supports medical necessity, along with a
+detailed explanation addressing the specific denial reason cited.

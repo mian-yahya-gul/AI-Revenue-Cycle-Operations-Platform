@@ -1,0 +1,257 @@
+2026-07-26 17:37:01 | INFO     | __main__ | Resetting database schema
+2026-07-26 17:37:01 | INFO     | database.db | Database reset complete
+2026-07-26 17:37:01 | INFO     | __main__ | Building vector store from payer policy documents
+2026-07-26 17:37:01 | INFO     | rag.loader | Loaded 8 payer policy documents from /Users/apple/Documents/medical-billing-revenue-cycle-ai/sample_data/payer_policies
+2026-07-26 17:37:01 | INFO     | rag.splitter | Split 8 documents into 28 chunks
+2026-07-26 17:37:06 | INFO     | rag.embeddings | Using OpenAIEmbeddings model=text-embedding-3-small
+2026-07-26 17:37:11 | INFO     | rag.vector_store | Vector store built and persisted to /Users/apple/Documents/medical-billing-revenue-cycle-ai/rag/vector_store_index (28 chunks)
+2026-07-26 17:37:11 | INFO     | __main__ | Seeding patients
+2026-07-26 17:37:11 | INFO     | __main__ | Submitting sample claims through the claim intake workflow
+2026-07-26 17:37:11 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=received, stage=intake)
+2026-07-26 17:37:11 | INFO     | database.repository | Event recorded: new_claim for claim CLM-57E3224116
+2026-07-26 17:37:11 | INFO     | graph.events | New claim event fired for CLM-57E3224116
+2026-07-26 17:37:12 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-57E3224116
+2026-07-26 17:37:12 | INFO     | utils.llm_client | Initialized ChatOpenAI model=gpt-4o-mini
+2026-07-26 17:37:16 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=in_review, stage=clinical_documentation)
+2026-07-26 17:37:16 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-57E3224116
+2026-07-26 17:37:19 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=in_review, stage=medical_coding)
+2026-07-26 17:37:19 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-57E3224116
+2026-07-26 17:37:19 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=in_review, stage=claim_validation)
+2026-07-26 17:37:19 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-57E3224116
+2026-07-26 17:37:19 | INFO     | rag.embeddings | Using OpenAIEmbeddings model=text-embedding-3-small
+2026-07-26 17:37:20 | INFO     | rag.retriever | Retrieved 4 policy chunks for query='prior authorization and coverage requirements for procedures: EKG, Chest x-ray, Basic metabolic panel, Complete blood count with diagnoses: Chest pain, unspecified, Rule out acute coronary syndrome' payer='UnitedHealthcare'
+2026-07-26 17:37:22 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=in_review, stage=insurance_policy)
+2026-07-26 17:37:23 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-57E3224116
+2026-07-26 17:37:24 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=in_review, stage=compliance_review)
+2026-07-26 17:37:24 | INFO     | graph.routing | Routing decision for claim CLM-57E3224116: ready_for_submission (compliance-gated)
+2026-07-26 17:37:24 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-57E3224116
+2026-07-26 17:37:26 | INFO     | database.repository | Saved claim CLM-57E3224116 (status=ready_for_submission, stage=orchestration)
+2026-07-26 17:37:26 | INFO     | database.repository | Event recorded: claim_ready_for_submission for claim CLM-57E3224116
+2026-07-26 17:37:26 | INFO     | __main__ | Claim CLM-57E3224116 for James Whitfield -> status=ready_for_submission risk=low revisions=0
+2026-07-26 17:37:26 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=received, stage=intake)
+2026-07-26 17:37:27 | INFO     | database.repository | Event recorded: new_claim for claim CLM-5ADD22B7C5
+2026-07-26 17:37:27 | INFO     | graph.events | New claim event fired for CLM-5ADD22B7C5
+2026-07-26 17:37:27 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-5ADD22B7C5
+2026-07-26 17:37:28 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=in_review, stage=clinical_documentation)
+2026-07-26 17:37:28 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-5ADD22B7C5
+2026-07-26 17:37:32 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=in_review, stage=medical_coding)
+2026-07-26 17:37:32 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-5ADD22B7C5
+2026-07-26 17:37:32 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=in_review, stage=claim_validation)
+2026-07-26 17:37:32 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-5ADD22B7C5
+2026-07-26 17:37:33 | INFO     | rag.retriever | Retrieved 4 policy chunks for query='prior authorization and coverage requirements for procedures: Basic metabolic panel ordered with diagnoses: Type 2 diabetes mellitus, Essential hypertension' payer='Aetna'
+2026-07-26 17:37:36 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=in_review, stage=insurance_policy)
+2026-07-26 17:37:36 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-5ADD22B7C5
+2026-07-26 17:37:38 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=in_review, stage=compliance_review)
+2026-07-26 17:37:38 | INFO     | graph.routing | Routing decision for claim CLM-5ADD22B7C5: ready_for_submission (compliance-gated)
+2026-07-26 17:37:38 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-5ADD22B7C5
+2026-07-26 17:37:40 | INFO     | database.repository | Saved claim CLM-5ADD22B7C5 (status=ready_for_submission, stage=orchestration)
+2026-07-26 17:37:40 | INFO     | database.repository | Event recorded: claim_ready_for_submission for claim CLM-5ADD22B7C5
+2026-07-26 17:37:40 | INFO     | __main__ | Claim CLM-5ADD22B7C5 for Maria Gonzalez -> status=ready_for_submission risk=low revisions=0
+2026-07-26 17:37:40 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=received, stage=intake)
+2026-07-26 17:37:40 | INFO     | database.repository | Event recorded: new_claim for claim CLM-E12D8106C3
+2026-07-26 17:37:40 | INFO     | graph.events | New claim event fired for CLM-E12D8106C3
+2026-07-26 17:37:40 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-E12D8106C3
+2026-07-26 17:37:43 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=in_review, stage=clinical_documentation)
+2026-07-26 17:37:43 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-E12D8106C3
+2026-07-26 17:37:46 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=in_review, stage=medical_coding)
+2026-07-26 17:37:46 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-E12D8106C3
+2026-07-26 17:37:46 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=in_review, stage=claim_validation)
+2026-07-26 17:37:46 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-E12D8106C3
+2026-07-26 17:37:46 | INFO     | rag.retriever | Retrieved 3 policy chunks for query='prior authorization and coverage requirements for procedures: Wrist x-ray, Closed treatment of distal radial fracture with splinting with diagnoses: Fracture of wrist, right side' payer='Cigna'
+2026-07-26 17:37:49 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=in_review, stage=insurance_policy)
+2026-07-26 17:37:49 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-E12D8106C3
+2026-07-26 17:37:51 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=in_review, stage=compliance_review)
+2026-07-26 17:37:51 | INFO     | graph.routing | Routing decision for claim CLM-E12D8106C3: ready_for_submission (compliance-gated)
+2026-07-26 17:37:51 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-E12D8106C3
+2026-07-26 17:37:53 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=ready_for_submission, stage=orchestration)
+2026-07-26 17:37:53 | INFO     | database.repository | Event recorded: claim_ready_for_submission for claim CLM-E12D8106C3
+2026-07-26 17:37:53 | INFO     | __main__ | Claim CLM-E12D8106C3 for Olivia Bennett -> status=ready_for_submission risk=low revisions=0
+2026-07-26 17:37:53 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=received, stage=intake)
+2026-07-26 17:37:53 | INFO     | database.repository | Event recorded: new_claim for claim CLM-3EDE3A10CB
+2026-07-26 17:37:53 | INFO     | graph.events | New claim event fired for CLM-3EDE3A10CB
+2026-07-26 17:37:53 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-3EDE3A10CB
+2026-07-26 17:37:55 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=in_review, stage=clinical_documentation)
+2026-07-26 17:37:55 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-3EDE3A10CB
+2026-07-26 17:37:58 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=in_review, stage=medical_coding)
+2026-07-26 17:37:58 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-3EDE3A10CB
+2026-07-26 17:37:58 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=in_review, stage=claim_validation)
+2026-07-26 17:37:58 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-3EDE3A10CB
+2026-07-26 17:37:58 | INFO     | rag.retriever | Retrieved 0 policy chunks for query='prior authorization and coverage requirements for procedures: Nebulizer treatment, Chest x-ray with diagnoses: Asthma, unspecified, uncomplicated, acute exacerbation' payer='Blue Cross Blue Shield'
+2026-07-26 17:38:00 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=in_review, stage=insurance_policy)
+2026-07-26 17:38:00 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-3EDE3A10CB
+2026-07-26 17:38:02 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=in_review, stage=compliance_review)
+2026-07-26 17:38:02 | INFO     | database.repository | Event recorded: compliance_failed for claim CLM-3EDE3A10CB
+2026-07-26 17:38:02 | INFO     | graph.routing | Routing decision for claim CLM-3EDE3A10CB: needs_human_review (compliance-gated)
+2026-07-26 17:38:02 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-3EDE3A10CB
+2026-07-26 17:38:04 | INFO     | database.repository | Saved claim CLM-3EDE3A10CB (status=needs_human_review, stage=orchestration)
+2026-07-26 17:38:04 | INFO     | database.repository | Event recorded: human_review_required for claim CLM-3EDE3A10CB
+2026-07-26 17:38:04 | INFO     | __main__ | Claim CLM-3EDE3A10CB for Daniel Okafor -> status=needs_human_review risk=high revisions=0
+2026-07-26 17:38:04 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=received, stage=intake)
+2026-07-26 17:38:04 | INFO     | database.repository | Event recorded: new_claim for claim CLM-3A2CC8F2C3
+2026-07-26 17:38:04 | INFO     | graph.events | New claim event fired for CLM-3A2CC8F2C3
+2026-07-26 17:38:04 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-3A2CC8F2C3
+2026-07-26 17:38:06 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=in_review, stage=clinical_documentation)
+2026-07-26 17:38:06 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-3A2CC8F2C3
+2026-07-26 17:38:08 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=in_review, stage=medical_coding)
+2026-07-26 17:38:08 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-3A2CC8F2C3
+2026-07-26 17:38:08 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=in_review, stage=claim_validation)
+2026-07-26 17:38:08 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-3A2CC8F2C3
+2026-07-26 17:38:09 | INFO     | rag.retriever | Retrieved 3 policy chunks for query='prior authorization and coverage requirements for procedures: Urinalysis with diagnoses: Urinary tract infection' payer='Cigna'
+2026-07-26 17:38:12 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=in_review, stage=insurance_policy)
+2026-07-26 17:38:12 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-3A2CC8F2C3
+2026-07-26 17:38:14 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=in_review, stage=compliance_review)
+2026-07-26 17:38:14 | INFO     | graph.routing | Routing decision for claim CLM-3A2CC8F2C3: ready_for_submission (compliance-gated)
+2026-07-26 17:38:14 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-3A2CC8F2C3
+2026-07-26 17:38:15 | INFO     | database.repository | Saved claim CLM-3A2CC8F2C3 (status=ready_for_submission, stage=orchestration)
+2026-07-26 17:38:15 | INFO     | database.repository | Event recorded: claim_ready_for_submission for claim CLM-3A2CC8F2C3
+2026-07-26 17:38:15 | INFO     | __main__ | Claim CLM-3A2CC8F2C3 for Priya Natarajan -> status=ready_for_submission risk=low revisions=0
+2026-07-26 17:38:15 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=received, stage=intake)
+2026-07-26 17:38:15 | INFO     | database.repository | Event recorded: new_claim for claim CLM-55AECF7181
+2026-07-26 17:38:15 | INFO     | graph.events | New claim event fired for CLM-55AECF7181
+2026-07-26 17:38:15 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:17 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=awaiting_documentation, stage=awaiting_documentation)
+2026-07-26 17:38:17 | INFO     | database.repository | Event recorded: documentation_required for claim CLM-55AECF7181
+2026-07-26 17:38:17 | INFO     | graph.graph | Claim CLM-55AECF7181 paused — insufficient documentation to proceed
+2026-07-26 17:38:17 | INFO     | graph.events | Claim CLM-55AECF7181 workflow paused awaiting documentation
+2026-07-26 17:38:17 | INFO     | __main__ | Claim CLM-55AECF7181 for Robert Kessler -> status=awaiting_documentation risk=low revisions=0
+2026-07-26 17:38:17 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=received, stage=intake)
+2026-07-26 17:38:17 | INFO     | database.repository | Event recorded: new_claim for claim CLM-52D09B0AC7
+2026-07-26 17:38:17 | INFO     | graph.events | New claim event fired for CLM-52D09B0AC7
+2026-07-26 17:38:17 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-52D09B0AC7
+2026-07-26 17:38:18 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=clinical_documentation)
+2026-07-26 17:38:18 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-52D09B0AC7
+2026-07-26 17:38:19 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=medical_coding)
+2026-07-26 17:38:19 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-52D09B0AC7
+2026-07-26 17:38:19 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=claim_validation)
+2026-07-26 17:38:19 | INFO     | database.repository | Event recorded: validation_failed for claim CLM-52D09B0AC7
+2026-07-26 17:38:19 | INFO     | graph.routing | Claim CLM-52D09B0AC7: Validation is sending coding back for revision (1/2): no CPT procedure codes were assigned
+2026-07-26 17:38:19 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Revising coding for claim CLM-52D09B0AC7 based on validation feedback
+2026-07-26 17:38:21 | INFO     | database.repository | Event recorded: coding_revision_requested for claim CLM-52D09B0AC7
+2026-07-26 17:38:21 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=medical_coding_revision)
+2026-07-26 17:38:21 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-52D09B0AC7
+2026-07-26 17:38:21 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=claim_validation)
+2026-07-26 17:38:21 | INFO     | database.repository | Event recorded: validation_failed for claim CLM-52D09B0AC7
+2026-07-26 17:38:21 | INFO     | graph.routing | Claim CLM-52D09B0AC7: Validation is sending coding back for revision (2/2): no CPT procedure codes were assigned
+2026-07-26 17:38:21 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Revising coding for claim CLM-52D09B0AC7 based on validation feedback
+2026-07-26 17:38:22 | INFO     | database.repository | Event recorded: coding_revision_requested for claim CLM-52D09B0AC7
+2026-07-26 17:38:22 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=medical_coding_revision)
+2026-07-26 17:38:22 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-52D09B0AC7
+2026-07-26 17:38:22 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=claim_validation)
+2026-07-26 17:38:22 | INFO     | database.repository | Event recorded: validation_failed for claim CLM-52D09B0AC7
+2026-07-26 17:38:22 | INFO     | graph.routing | Claim CLM-52D09B0AC7: coding issues remain after 2 revision attempt(s) — proceeding to Insurance Policy; Compliance Agent will flag for human review.
+2026-07-26 17:38:22 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-52D09B0AC7
+2026-07-26 17:38:23 | INFO     | rag.retriever | Retrieved 4 policy chunks for query='prior authorization and coverage requirements for procedures:  with diagnoses: Essential hypertension' payer='Aetna'
+2026-07-26 17:38:26 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=insurance_policy)
+2026-07-26 17:38:26 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-52D09B0AC7
+2026-07-26 17:38:29 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=in_review, stage=compliance_review)
+2026-07-26 17:38:29 | INFO     | database.repository | Event recorded: compliance_failed for claim CLM-52D09B0AC7
+2026-07-26 17:38:29 | INFO     | graph.routing | Routing decision for claim CLM-52D09B0AC7: needs_human_review (compliance-gated)
+2026-07-26 17:38:29 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-52D09B0AC7
+2026-07-26 17:38:30 | INFO     | database.repository | Saved claim CLM-52D09B0AC7 (status=needs_human_review, stage=orchestration)
+2026-07-26 17:38:30 | INFO     | database.repository | Event recorded: human_review_required for claim CLM-52D09B0AC7
+2026-07-26 17:38:30 | INFO     | __main__ | Claim CLM-52D09B0AC7 for Angela Torres -> status=needs_human_review risk=high revisions=2
+2026-07-26 17:38:30 | INFO     | __main__ | Claim CLM-55AECF7181 paused awaiting documentation — supplying supplemental notes to resume
+2026-07-26 17:38:30 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:32 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=awaiting_documentation, stage=awaiting_documentation)
+2026-07-26 17:38:32 | INFO     | database.repository | Event recorded: document_updated for claim CLM-55AECF7181
+2026-07-26 17:38:32 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:33 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=in_review, stage=clinical_documentation)
+2026-07-26 17:38:33 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:36 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=in_review, stage=medical_coding)
+2026-07-26 17:38:36 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:36 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=in_review, stage=claim_validation)
+2026-07-26 17:38:36 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:36 | INFO     | rag.retriever | Retrieved 4 policy chunks for query='prior authorization and coverage requirements for procedures: Basic metabolic panel ordered with diagnoses: Essential hypertension, controlled' payer='UnitedHealthcare'
+2026-07-26 17:38:38 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=in_review, stage=insurance_policy)
+2026-07-26 17:38:38 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-55AECF7181
+2026-07-26 17:38:40 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=in_review, stage=compliance_review)
+2026-07-26 17:38:40 | INFO     | graph.routing | Routing decision for claim CLM-55AECF7181: ready_for_submission (compliance-gated)
+2026-07-26 17:38:40 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-55AECF7181
+2026-07-26 17:38:42 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=ready_for_submission, stage=orchestration)
+2026-07-26 17:38:42 | INFO     | database.repository | Event recorded: claim_ready_for_submission for claim CLM-55AECF7181
+2026-07-26 17:38:42 | INFO     | __main__ | Claim CLM-55AECF7181 resumed -> status=ready_for_submission risk=low
+2026-07-26 17:38:42 | INFO     | __main__ | Claim CLM-52D09B0AC7 (coding revision loop demo) -> revisions=2
+2026-07-26 17:38:42 | INFO     | __main__ | Running denial/appeal workflow for two claims
+2026-07-26 17:38:42 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=denied, stage=orchestration)
+2026-07-26 17:38:42 | INFO     | agents.denial_analysis_agent | [Denial Analysis Agent] Processing claim CLM-E12D8106C3
+2026-07-26 17:38:44 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=denied, stage=denial_analysis)
+2026-07-26 17:38:44 | INFO     | database.repository | Event recorded: claim_denied for claim CLM-E12D8106C3
+2026-07-26 17:38:44 | INFO     | graph.routing | Denial for claim CLM-E12D8106C3 is not appealable — routing to human review
+2026-07-26 17:38:44 | INFO     | database.repository | Saved claim CLM-E12D8106C3 (status=needs_human_review, stage=human_review)
+2026-07-26 17:38:44 | INFO     | database.repository | Event recorded: human_review_required for claim CLM-E12D8106C3
+2026-07-26 17:38:44 | INFO     | __main__ | Denial processed for claim CLM-E12D8106C3 -> status=needs_human_review
+2026-07-26 17:38:44 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=denied, stage=orchestration)
+2026-07-26 17:38:44 | INFO     | agents.denial_analysis_agent | [Denial Analysis Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:46 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=denied, stage=denial_analysis)
+2026-07-26 17:38:46 | INFO     | database.repository | Event recorded: claim_denied for claim CLM-55AECF7181
+2026-07-26 17:38:46 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:46 | INFO     | rag.retriever | Retrieved 4 policy chunks for query='prior authorization and coverage requirements for procedures: Basic metabolic panel ordered with diagnoses: Essential hypertension, controlled' payer='UnitedHealthcare'
+2026-07-26 17:38:48 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=denied, stage=insurance_policy_recheck)
+2026-07-26 17:38:48 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-55AECF7181
+2026-07-26 17:38:50 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=denied, stage=compliance_review)
+2026-07-26 17:38:50 | INFO     | agents.appeal_generation_agent | [Appeal Generation Agent] Processing claim CLM-55AECF7181
+2026-07-26 17:38:56 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=appealing, stage=appeal_generation)
+2026-07-26 17:38:56 | INFO     | database.repository | Event recorded: appeal_submitted for claim CLM-55AECF7181
+2026-07-26 17:38:56 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-55AECF7181
+2026-07-26 17:38:57 | INFO     | database.repository | Saved claim CLM-55AECF7181 (status=ready_for_resubmission, stage=orchestration)
+2026-07-26 17:38:57 | INFO     | __main__ | Denial processed for claim CLM-55AECF7181 -> status=ready_for_resubmission
+2026-07-26 17:38:57 | INFO     | __main__ | Seeding complete.
+2026-07-26 17:40:09 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:06:24 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:06:42 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:06:42 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=received, stage=intake)
+2026-07-26 18:06:42 | INFO     | database.repository | Event recorded: new_claim for claim CLM-FF4F00841C
+2026-07-26 18:06:42 | INFO     | graph.events | New claim event fired for CLM-FF4F00841C
+2026-07-26 18:06:42 | INFO     | agents.clinical_documentation_agent | [Clinical Documentation Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:06:46 | INFO     | utils.llm_client | Initialized ChatOpenAI model=gpt-4o-mini
+2026-07-26 18:06:48 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=in_review, stage=clinical_documentation)
+2026-07-26 18:06:48 | INFO     | agents.medical_coding_agent | [Medical Coding Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:06:51 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=in_review, stage=medical_coding)
+2026-07-26 18:06:51 | INFO     | agents.claim_validation_agent | [Claim Validation Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:06:51 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=in_review, stage=claim_validation)
+2026-07-26 18:06:51 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:06:51 | INFO     | rag.embeddings | Using OpenAIEmbeddings model=text-embedding-3-small
+2026-07-26 18:06:52 | INFO     | rag.retriever | Retrieved 2 policy chunks for query='prior authorization and coverage requirements for procedures: EKG obtained, chest x-ray obtained, Basic metabolic panel ordered with diagnoses: Chest pain, unspecified' payer='Cigna'
+2026-07-26 18:06:56 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=in_review, stage=insurance_policy)
+2026-07-26 18:06:56 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-FF4F00841C
+2026-07-26 18:06:58 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=in_review, stage=compliance_review)
+2026-07-26 18:06:58 | INFO     | graph.routing | Routing decision for claim CLM-FF4F00841C: ready_for_submission (compliance-gated)
+2026-07-26 18:06:58 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-FF4F00841C
+2026-07-26 18:07:00 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=ready_for_submission, stage=orchestration)
+2026-07-26 18:07:00 | INFO     | database.repository | Event recorded: claim_ready_for_submission for claim CLM-FF4F00841C
+2026-07-26 18:08:08 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:08:49 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:08:55 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:08:55 | INFO     | rag.loader | Loaded 8 payer policy documents from /Users/apple/Documents/medical-billing-revenue-cycle-ai/sample_data/payer_policies
+2026-07-26 18:09:04 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:07 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:09 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:13 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:17 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:39 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:39 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=denied, stage=orchestration)
+2026-07-26 18:09:39 | INFO     | agents.denial_analysis_agent | [Denial Analysis Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:09:42 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=denied, stage=denial_analysis)
+2026-07-26 18:09:42 | INFO     | database.repository | Event recorded: claim_denied for claim CLM-FF4F00841C
+2026-07-26 18:09:42 | INFO     | agents.insurance_policy_agent | [Insurance Policy Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:09:42 | INFO     | rag.retriever | Retrieved 2 policy chunks for query='prior authorization and coverage requirements for procedures: EKG obtained, chest x-ray obtained, Basic metabolic panel ordered with diagnoses: Chest pain, unspecified' payer='Cigna'
+2026-07-26 18:09:45 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=denied, stage=insurance_policy_recheck)
+2026-07-26 18:09:45 | INFO     | agents.compliance_agent | [Compliance Agent] Reviewing claim CLM-FF4F00841C
+2026-07-26 18:09:47 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=denied, stage=compliance_review)
+2026-07-26 18:09:47 | INFO     | agents.appeal_generation_agent | [Appeal Generation Agent] Processing claim CLM-FF4F00841C
+2026-07-26 18:09:51 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:53 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=appealing, stage=appeal_generation)
+2026-07-26 18:09:53 | INFO     | database.repository | Event recorded: appeal_submitted for claim CLM-FF4F00841C
+2026-07-26 18:09:53 | INFO     | agents.revenue_cycle_manager_agent | [Revenue Cycle Manager Agent] Coordinating next steps for claim CLM-FF4F00841C
+2026-07-26 18:09:55 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:09:55 | INFO     | database.repository | Saved claim CLM-FF4F00841C (status=ready_for_resubmission, stage=orchestration)
+2026-07-26 18:10:55 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:11:12 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:55:54 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:55:56 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:55:57 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:55:58 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:56:00 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:56:00 | INFO     | rag.loader | Loaded 8 payer policy documents from /Users/apple/Documents/medical-billing-revenue-cycle-ai/sample_data/payer_policies
+2026-07-26 18:56:01 | INFO     | database.db | Database initialized at database/revenue_cycle.db
+2026-07-26 18:56:03 | INFO     | database.db | Database initialized at database/revenue_cycle.db

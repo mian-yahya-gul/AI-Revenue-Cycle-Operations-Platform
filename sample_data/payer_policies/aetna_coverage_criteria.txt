@@ -1,0 +1,34 @@
+Aetna Clinical Policy Bulletin — General Coverage Criteria
+Policy Number: AET-CPB-2024-15
+Effective Date: April 1, 2024
+
+COVERAGE DETERMINATION STANDARD
+Aetna considers a service medically necessary when it is required to
+identify or treat a member's illness or injury and meets accepted
+standards of medicine. Services that are primarily for the convenience
+of the member or provider, or that are duplicative of a previously
+performed and paid service, are not covered.
+
+DUPLICATE CLAIM POLICY
+A claim is considered a duplicate when the same procedure code, same
+date of service, same rendering provider, and same patient appear on a
+previously adjudicated claim. Duplicate claims are denied under reason
+code CO-18 unless the second claim includes modifier -76 (repeat
+procedure by same physician) or modifier -77 (repeat procedure by
+another physician) with supporting clinical documentation explaining
+the medical necessity of the repeat service.
+
+REQUIRED CLAIM ELEMENTS
+Every submitted claim must contain complete patient eligibility
+information, an accurate ICD-10 diagnosis code that is an exact match
+to the documented condition in the medical record, an appropriate CPT
+or HCPCS code, the correct place-of-service code, and rendering
+provider NPI. Claims with mismatched or unsupported diagnosis-to-
+procedure code combinations are subject to automated coding edits and
+may be denied under reason code CO-11 (diagnosis inconsistent with
+procedure).
+
+BEHAVIORAL HEALTH SERVICES
+Outpatient behavioral health visits do not require precertification for
+the first 8 visits per calendar year. Visits beyond this threshold
+require submission of a treatment plan and precertification approval.

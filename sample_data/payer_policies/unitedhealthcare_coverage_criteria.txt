@@ -1,0 +1,41 @@
+UnitedHealthcare Commercial Plan — Coverage Determination Guidelines
+Policy Number: UHC-CD-2024-07
+Effective Date: March 1, 2024
+
+GENERAL COVERAGE PRINCIPLES
+UnitedHealthcare covers services that are medically necessary, consistent
+with generally accepted standards of medical practice, and not primarily
+for the convenience of the patient or provider.
+
+MEDICAL NECESSITY CRITERIA
+A service is considered medically necessary when documentation
+establishes all of the following:
+1. The service is appropriate for the symptoms, diagnosis, or treatment
+   of the member's condition, illness, or injury.
+2. The service is provided for the diagnosis or direct treatment of the
+   condition, not for screening purposes unless explicitly listed as a
+   covered preventive benefit.
+3. The service is delivered in accordance with generally accepted
+   standards of medical practice.
+4. The service is not primarily for the convenience of the patient,
+   physician, or other health care provider.
+5. Clinical documentation supports the level of service billed.
+
+EXCLUDED SERVICES
+The following are generally excluded from coverage unless a specific
+plan rider states otherwise:
+- Cosmetic procedures not related to reconstructive necessity following
+  injury or disease
+- Experimental or investigational treatments not approved by the FDA for
+  the specific diagnosis billed
+- Services rendered without a valid physician order
+- Duplicate services billed for the same date of service and same
+  provider without documented medical justification
+
+DOCUMENTATION REQUIREMENTS FOR CLAIM SUBMISSION
+Every claim must include: patient demographic and eligibility
+information, ICD-10 diagnosis code(s) that support medical necessity,
+CPT/HCPCS procedure code(s) consistent with the documented service,
+rendering provider NPI, and the date of service. Claims missing any of
+the above elements will be returned or denied as incomplete
+(reason code CO-16).

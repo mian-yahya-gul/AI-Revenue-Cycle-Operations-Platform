@@ -1,0 +1,32 @@
+Blue Cross Blue Shield — Prior Authorization Requirements
+Policy Number: BCBS-PA-2024-05
+Effective Date: February 15, 2024
+
+SERVICES REQUIRING PRIOR AUTHORIZATION
+Blue Cross Blue Shield (BCBS) requires prior authorization for:
+1. Inpatient hospital admissions (non-emergent).
+2. Advanced imaging services (MRI, CT, PET, nuclear medicine studies).
+3. Outpatient surgical procedures performed in an ambulatory surgery
+   center with an allowed amount exceeding $2,000.
+4. Home infusion therapy and specialty pharmaceuticals.
+5. Applied behavior analysis (ABA) therapy beyond the initial evaluation.
+
+DOCUMENTATION REQUIRED
+Requests must include a completed prior authorization form, clinical
+notes from the ordering or treating physician, relevant diagnostic
+results, and accurate ICD-10 and CPT/HCPCS codes. BCBS reviews requests
+within 5 business days for standard requests and 72 hours for expedited
+(urgent) requests.
+
+DENIALS FOR MISSING AUTHORIZATION
+Claims for services requiring prior authorization that are submitted
+without an approval on file are denied under reason code CO-197.
+Network providers may not bill the member for the denied amount
+(no balance billing) except in cases where the member was notified in
+advance in writing and agreed to be financially responsible.
+
+APPEAL RIGHTS
+Providers may file a first-level appeal within 180 days of the denial
+notice. The appeal must include all supporting clinical documentation
+and a written statement addressing the specific basis for the original
+denial.

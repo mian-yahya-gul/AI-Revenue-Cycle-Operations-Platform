@@ -1,0 +1,50 @@
+UnitedHealthcare Commercial Plan — Prior Authorization Policy
+Policy Number: UHC-PA-2024-11
+Effective Date: January 1, 2024
+
+SCOPE
+This policy applies to all UnitedHealthcare Commercial PPO and HMO plans
+for outpatient and inpatient procedures billed under CPT codes in the
+surgical, advanced imaging, and durable medical equipment categories.
+
+PRIOR AUTHORIZATION REQUIRED SERVICES
+The following categories of service require prior authorization before
+the service is rendered. Claims submitted without an approved
+authorization number on file will be denied.
+
+1. Advanced imaging: MRI, MRA, CT, and PET scans (CPT 70000–79999 range)
+   require prior authorization except when performed in an emergency
+   department setting with a documented emergency diagnosis.
+2. Inpatient surgical procedures with an expected length of stay greater
+   than 23 hours require prior authorization at least 3 business days
+   before the scheduled procedure date.
+3. Durable medical equipment (DME) with a purchase or rental cost
+   exceeding $500 requires prior authorization.
+4. Physical therapy, occupational therapy, and chiropractic services
+   beyond the initial 12 visits per calendar year require prior
+   authorization to continue coverage.
+5. Specialty pharmacy and infusion therapy administered in an outpatient
+   facility require prior authorization regardless of cost.
+
+REQUIRED DOCUMENTATION FOR PRIOR AUTHORIZATION SUBMISSION
+- Physician order signed and dated by the ordering provider
+- Clinical notes supporting medical necessity, including relevant
+  diagnostic test results
+- ICD-10 diagnosis code(s) supporting the medical necessity of the
+  requested service
+- CPT/HCPCS code(s) for the requested procedure or equipment
+- For DME: a Letter of Medical Necessity (LMN)
+
+CLAIM DENIAL FOR MISSING PRIOR AUTHORIZATION
+Claims for services listed above submitted without a valid prior
+authorization reference number will be denied with reason code
+CO-197 (Precertification/Authorization Absent). Providers may submit a
+retroactive authorization request within 180 days of the date of
+service, accompanied by a written explanation of the extenuating
+circumstances, but retroactive approval is not guaranteed.
+
+APPEALS
+A denial issued for lack of prior authorization may be appealed within
+180 days of the denial notice. The appeal must include the missing
+authorization documentation and a cover letter explaining why prior
+authorization could not be obtained before the service was rendered.

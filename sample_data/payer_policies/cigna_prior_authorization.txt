@@ -1,0 +1,40 @@
+Cigna Healthcare — Prior Authorization and Utilization Management Policy
+Policy Number: CIG-UM-2024-09
+Effective Date: January 15, 2024
+
+SERVICES REQUIRING PRIOR AUTHORIZATION
+Cigna requires prior authorization for:
+1. All elective inpatient admissions and skilled nursing facility
+   admissions.
+2. Outpatient advanced imaging (MRI, CT, PET).
+3. Spinal surgery, joint replacement surgery, and bariatric surgery.
+4. Specialty infusion drugs administered outside the home setting.
+5. Durable medical equipment rentals or purchases exceeding $750.
+
+DOCUMENTATION STANDARDS
+All prior authorization requests must include the treating physician's
+clinical rationale, relevant diagnostic imaging or lab results, a
+description of conservative treatments already attempted (where
+applicable), and the specific ICD-10 and CPT/HCPCS codes for the
+requested service. Incomplete requests will be returned to the
+requesting provider without a determination.
+
+CLAIMS WITHOUT PRIOR AUTHORIZATION
+Services rendered without required prior authorization will be denied
+under reason code CO-197. Cigna does not guarantee retrospective
+authorization; requests for retrospective review must be submitted
+within 90 days of the date of service and must include a clear
+explanation of any extenuating circumstances (e.g., emergent
+conversion from an outpatient to inpatient procedure).
+
+PRIOR AUTHORIZATION VALIDITY
+An approved prior authorization is valid for 90 days from the date of
+approval unless otherwise specified on the authorization letter. Claims
+submitted after the authorization has expired will be treated as if no
+authorization was obtained.
+
+APPEALS
+Cigna allows two levels of internal appeal. Level 1 appeals must be
+submitted within 180 days of the denial and are reviewed by a clinician
+who was not involved in the original determination. Level 2 appeals
+require new clinical information not previously considered.

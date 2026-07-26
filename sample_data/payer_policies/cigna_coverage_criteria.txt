@@ -1,0 +1,30 @@
+Cigna Healthcare — Medical Necessity and Coverage Guidelines
+Policy Number: CIG-MN-2024-22
+Effective Date: May 1, 2024
+
+MEDICAL NECESSITY DEFINITION
+Cigna defines a medically necessary service as one that is required to
+diagnose or treat an illness, injury, disease, or its symptoms, is in
+accordance with generally accepted standards of medical practice, and
+is not solely for the convenience of the patient or provider.
+
+CODING ACCURACY REQUIREMENTS
+Claims must reflect the most specific ICD-10 code supported by clinical
+documentation. Unspecified diagnosis codes (e.g., codes ending in
+'.9' where a more specific code exists) may trigger additional review
+and are a common cause of claim delay. CPT codes must accurately reflect
+the complexity and content of the service rendered; upcoding or
+downcoding relative to the documented note is grounds for claim denial
+and potential audit.
+
+MISSING PHYSICIAN NOTES
+Cigna requires that a signed physician note or operative report be
+available to support every billed service. Claims for which supporting
+documentation cannot be produced upon request are subject to denial and
+potential recoupment of previously paid amounts under reason code
+CO-B7.
+
+TIMELY FILING
+Claims must be submitted within 120 days of the date of service.
+Claims submitted after this window will be denied under reason code
+CO-29 (timely filing limit expired) regardless of medical necessity.

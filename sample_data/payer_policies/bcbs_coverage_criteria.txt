@@ -1,0 +1,32 @@
+Blue Cross Blue Shield — Coverage and Claims Adjudication Guidelines
+Policy Number: BCBS-CA-2024-18
+Effective Date: June 1, 2024
+
+COVERAGE STANDARD
+BCBS covers services that are medically necessary and consistent with
+nationally recognized clinical guidelines. Coverage determinations are
+based on the clinical documentation submitted with, or available to
+support, the claim.
+
+CLAIM COMPLETENESS REQUIREMENTS
+A complete claim includes: patient and subscriber identification
+information, rendering and billing provider NPI, date(s) of service,
+place of service code, ICD-10 diagnosis code(s), CPT/HCPCS procedure
+code(s), units of service, and billed charges. Claims missing any
+required field are rejected prior to adjudication and are not counted
+against timely filing limits if resubmitted within 30 days of
+rejection.
+
+DUPLICATE CLAIM HANDLING
+BCBS's claims editing system flags any claim matching an existing paid
+or pending claim on patient, date of service, procedure code, and
+rendering provider as a potential duplicate. Duplicate claims are
+denied under reason code CO-18 unless accompanied by an appropriate
+modifier (-76, -77, -91) and documentation supporting a distinct,
+medically necessary repeat service.
+
+MODIFIER AND BUNDLING EDITS
+Claims are subject to National Correct Coding Initiative (NCCI) edits.
+Procedure code combinations that are bundled under NCCI and billed
+without an appropriate modifier will have the component code denied as
+included in the primary procedure.
